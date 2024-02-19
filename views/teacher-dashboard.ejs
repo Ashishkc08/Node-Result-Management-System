@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Dashboard</title>
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  
+</head>
+
+<body>
+  
+  <div class="container mt-5">
+    <h1 class="mb-4">Teacher Dashboard</h1>
+    <div class="mb-3">
+      <a class="btn btn-secondary" href="/logout">Logout</a>
+      <a class="btn btn-primary" href="/add/student">Add Student</a>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Roll Number</th>
+          <th>Name</th>
+          <th>Date of Birth</th>
+          <th>Scores</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+          <% students.forEach(student => { %>
+            <form action="/delete/student/<%= student.id %>" method="get">
+            <tr>
+              <td><%= student.rollNumber %></td>
+              <td><%= student.name %></td>
+              <td><%= student.dateOfBirth %></td>
+              <td><%= student.score %></td>
+              <td>
+                <button class="btn btn-danger btn-sm" type="submit" >Delete</button>
+                <a class="btn btn-warning btn-sm" href="/edit/student/<%= student.id %>">Edit</a>
+              </td>
+            </tr>
+          </form>
+          <% }); %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

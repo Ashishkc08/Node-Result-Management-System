@@ -1,0 +1,48 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Student</title>
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+  
+  <div class="container mt-5">
+    <h1 class="mb-4">Add Student</h1>
+    <div class="mb-3">
+      <a class="btn btn-secondary" href="/logout">Logout</a>
+      <a class="btn btn-primary" href="/api/teacher/students">Back</a>
+    </div>
+    
+  
+    <form id="studentForm" action="/add/student" method="post">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="dateOfBirth">Date of Birth</label>
+        <input type="date" id="dateOfBirth" name="dateOfBirth" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="rollNumber">Roll Number</label>
+        <input type="text" id="rollNumber" name="rollNumber" class="form-control" required>
+        <% if (typeof errorRollNumber !== 'undefined') { %>
+          <small class="text-danger"><%= errorRollNumber %></small>
+        <% } %>
+      </div>
+      
+      <div class="form-group">
+        <label for="score">Score</label>
+        <input type="number" id="score" name="score" class="form-control" required>
+      </div>
+      <button id="addStudentButton" type="submit" class="btn btn-primary">Add Student</button>
+    </form>
+  </div>
+  
+<script src="../backend/js_files/add-student.js"></script>
+</body>
+</html>

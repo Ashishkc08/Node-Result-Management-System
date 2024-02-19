@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Result</title>
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="mb-4">Student Result</h1>
+    <p><strong>Roll Number:</strong><%= student.rollNumber %></p>
+    <p><strong>Name:</strong><%= student.name %></p>
+    <p><strong>Date of Birth:</strong><%= student.dateOfBirth %></p>
+    <p><strong>Score:</strong><%= student.score %></p>
+    <a href="/student-logout" class="btn btn-primary">Back</a>
+  </div>
+</body>
+</html>
